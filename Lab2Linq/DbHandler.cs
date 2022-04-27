@@ -14,6 +14,7 @@ namespace Lab2Linq
         {
             using SchoolContext context = new SchoolContext();
 
+            Console.Clear();
             return context.Courses
                 .Where(c => c.Name.Contains(search))
                 .Select(c => c.Teacher.Name)

@@ -13,6 +13,7 @@
         }
         static bool MainMenu()
         {
+            Console.Clear();
             Console.WriteLine("Choose option:");
             Console.WriteLine("1. Get teacher by course name");
             Console.WriteLine("2. Get every class and their teachers");
@@ -43,11 +44,16 @@
         }
         static void GetTeacherByCourseNameMenu()
         {
+            Console.Clear();
+            Console.WriteLine("Enter course:");
            var res = DbHandler.GetTeacherByCourseName(Console.ReadLine());
             Console.WriteLine(res);
+            Console.WriteLine("Press any key to return");
+            Console.ReadKey();
         }
         static void GetEveryStudentAndTeacherMenu()
         {
+            Console.Clear();
             var res = DbHandler.GetEveryStudentAndTeacher();
 
             foreach (var item in res)
@@ -66,6 +72,8 @@
                 studentNames.ForEach(x => Console.WriteLine(x));
                 Console.WriteLine("----------");
             }
+            Console.WriteLine("Press any key to return");
+            Console.ReadKey();
         }
         static void GetStudentsAndTeacherByCourseName()
         {
